@@ -3,11 +3,10 @@ using namespace std;
 
 int main()
 {
-    int a=0, b=5;
-    while (a<b)
+    int a=0;
+    while (a<=0000)
     {
-        cout<<"a is smaller then b"<<endl;
+        cout<<a<<",";
         a=a+1;
     }
-    
 }
