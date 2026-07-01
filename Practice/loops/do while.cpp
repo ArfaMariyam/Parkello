@@ -3,12 +3,11 @@ using namespace std;
 
 int main()
 {
-    int a=5;
-    while(a<=10)
+    int a=0;
+    do
     {
         cout<<a<<endl;
-        a=a+1;
     }
-    cout<<"a is reached at 10"<<endl;
+    while(a <= 10);
     return 0;
 }

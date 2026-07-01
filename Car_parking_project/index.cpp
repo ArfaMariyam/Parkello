@@ -1,9 +1,9 @@
 #include<iostream>
 #include<fstream>
-#include<string.h>
-#include<process.h>
-#include<stdio.h>
-#include<conio.h>
+// #include<string.h>
+// #include<process.h>
+// #include<stdio.h>
+// #include<conio.h>
 using namespace std;
 void menu()
 {
@@ -38,6 +38,9 @@ cout<<endl;
 cout<<"\n\t\t\t\t\t\t13. Delete the record";
 cout<<endl;
 cout<<"\n\t\t\t\t\t\t14. Exit Program";
+cout<<endl;
+cout<<"\t\t\t=================================================";
+cout<<endl;
 cout<<endl;
 }
 

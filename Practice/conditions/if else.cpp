@@ -15,7 +15,7 @@ int main()
     }
     else
     {
-        cout << "aa";
+        cout << "7";
     }
     return 0;
 }
