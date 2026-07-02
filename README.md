@@ -71,11 +71,11 @@ Once I completed my initial standalone practice exercises, I initialized my firs
 
 The application currently boots into an interactive, multi-layered command line menu loop that runs the following operational segments:
 
-*   **Administrative Security Gate:** An automated login panel giving the user exactly 5 operational attempts to authenticate using protected matching criteria (`admin` / `admin123`)[cite: 3]. It uses low-level character reading (`getch()`) to securely mask the user's password entries with visual `'X'` placeholders[cite: 3].
-*   **14-Point Terminal Menu Dashboard:** A dedicated helper function `manu()` that outputs a large console grid displaying options for vehicle check-ins, check-outs, statistical reviews, record modifications, and safe exits[cite: 3].
-*   **Input Typos & Error Sanitization:** A robust safety validation sequence using stream control constraints (`while (!(cin >> u_input))`)[cite: 3]. If a user accidentally types a letter instead of a number, the stream uses `cin.clear()` and `cin.ignore()` to flush the broken input data and keep the app from crashing[cite: 3].
-*   **Capacity Control & Conditional Pricing Logic:** Tracks real-time vehicle totals against maximum capacity limitations (e.g., limits parking areas strictly to 20 cars or 50 bicycles)[cite: 3]. It updates global counter statistics (`ccount`, `bycount`) and automatically manages monetary calculations (`amount`) based on hardcoded pricing rules[cite: 3].
-*   **Live Data Modification System:** Provides administrative control panels allowing users to display all running statistics (Option 11), manually overwrite specific numbers to adjust records dynamically (Option 12), or clear all memory variables back to zero (Option 13)[cite: 3].
+*   **Administrative Security Password** 
+*   **14-Point Terminal Menu Dashboard** 
+*   **Input Typos & Error Sanitization** 
+*   **Capacity Control & Conditional Pricing Logic** 
+*   **Live Data Modification System** 
 
 ---
 
