@@ -60,30 +60,27 @@ The final fundamental concept. I learned how to stop writing messy, long blocks 
 
 ## 🚗 The Ultimate Synthesis: Car Parking Management Project
 
-Once I completed my initial standalone practice exercises, I initialized my first major central project[cite: 2]. This is my active laboratory application where I am weaving together separate concepts—variables, control flow branching, arithmetic operations, and console inputs—into a unified functional system[cite: 2, 3]. 
+Once I completed my early standalone practice exercises, I initialized my first major central project. This is my active laboratory application where I am weaving together separate concepts—variables, control flow branching, and custom functions—into a unified application layout.
 
-*   **Location:** `/Car_parking_project/index.cpp`[cite: 2]
-*   **Current Status:** **Phase 1 Framework Completed!** The entire user experience, secure entrance gates, menu selection array, input sanitization blocks, and memory variable calculation networks are completely built out and active. 
+* **Location:** `/Car_parking_project/index.cpp`
+* **Current Status:** **Phase 1 (Interface Layout & Menu Mapping) Completed!** I have successfully designed the blueprint for the entire application, mapped out the terminal interface grid, and built the initial nested condition wrappers.
 
 ---
 
 ### 💻 Current Feature Architecture inside `index.cpp`
 
-The application currently boots into an interactive, multi-layered command line menu loop that runs the following operational segments:
-
-*   **Administrative Security Password** 
-*   **14-Point Terminal Menu Dashboard** 
-*   **Input Typos & Error Sanitization** 
-*   **Capacity Control & Conditional Pricing Logic** 
-*   **Live Data Modification System** 
+The nenu is clean, modular, and executes the structural base of a user-facing program
 
 ---
 
-### 🚀 Future Integration Milestones (Moving Forward)
+### 🚀 Future Integration Milestones (My Summer Roadmap)
 
-Right now, the application processes information completely inside temporary runtime memory variables[cite: 3]. While I have already included the placeholder `#include <fstream>` library at the top of the file, the data resets whenever the application closes[cite: 3]. 
+Since I am building this step-by-step alongside my learning subfolders, here is my roadmap for turning this interface map into a fully powered management engine:
 
-As my summer progress advances through the holidays, my next big engineering milestone is linking this layout to real local file operations (`ifstream` and `ofstream`)[cite: 3]. This will allow the application to permanently write, save, and reload parking logs directly to a physical text file on the computer, creating a truly robust data storage engine[cite: 3]!
+* **Milestone 1: Loop Lifecycle Control:** Right now, the program exits as soon as a single choice is made. My next step is wrapping `main()` inside a looping cycle (`while` or `do-while`) so the program runs infinitely, allowing user actions to continue seamlessly until they choose Option 14 to exit.
+* **Milestone 2: Multi-Branch Menu Logic (`switch-case`):** Expanding my basic `if` check into a complete `switch` block to handle choices 2 through 14 smoothly.
+* **Milestone 3: Counting Variables & Math Processing:** Initializing variable counters at the top of the program to dynamically keep track of how many spots are left, how many vehicles of each type are parked, and compute custom currency amounts earned from check-outs.
+* **Milestone 4: Permanent Storage System (`fstream`):** Un-commenting the `#include <fstream>` library at the top of my code to write logic that saves and loads the parking grid data directly to a local text file, so the information is never lost when the app closes!
 
 ---
 
