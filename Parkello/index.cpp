@@ -108,12 +108,12 @@ int main()
         else if (choice == 11)
         {
             cout << "\n\t\tShow record!!!" << endl;
-            cout << "Record:" << endl;
-            cout << "The current number of Cars parked is:" << carCount << endl;
-            cout << "The current number of Bikes parked is:" << bikeCount << endl;
-            cout << "The current number of Buses parked is:" << busCount << endl;
-            cout << "The current number of Bicycles parked is:" << bicycleCount << endl;
-            cout << "Total current cash is:" << totalAmount << endl;
+            cout << "\n\t\tRecord:" << endl;
+            cout << "\n\t\tThe current number of Cars parked is:" << carCount << endl;
+            cout << "\n\t\tThe current number of Bikes parked is:" << bikeCount << endl;
+            cout << "\n\t\tThe current number of Buses parked is:" << busCount << endl;
+            cout << "\n\t\tThe current number of Bicycles parked is:" << bicycleCount << endl;
+            cout << "\n\t\tTotal current cash is:" << totalAmount << endl;
         }
         else if (choice == 12)
         {
@@ -128,37 +128,62 @@ int main()
             cin>>edit;
             if(edit == 1)
             {
-                cout<<"Editing Cars"<<endl;
+                cout<<"\n\n\t\t\tEditing Cars"<<endl;
             }
             else if(edit == 2)
             {
-                cout<<"Editing Bikes"<<endl;
+                cout<<"\n\n\t\t\tEditing Bikes"<<endl;
             }
             else if(edit == 3)
             {
-                cout<<"Editing Buses"<<endl;
+                cout<<"\n\n\t\t\tEditing Buses"<<endl;
             }
             else if(edit == 4)
             {
-                cout<<"Editing Rishkaws"<<endl;
+                cout<<"\n\n\t\t\tEditing Rishkaws"<<endl;
             }
             else if(edit == 5)
             {
-                cout<<"Editing Bicycles"<<endl;
+                cout<<"\n\n\t\t\tEditing Bicycles"<<endl;
             }
             else if(edit == 6)
             {
-                cout<<"Exiting Editing"<<endl;
+                cout<<"\n\n\t\t\tExiting Editing"<<endl;
             }
             else
             {
-                cout<<"Please only select from given options"<<endl;
+                cout<<"\n\n\t\t\tPlease only select from given options"<<endl;
             }
         }
         else if (choice == 13)
         {
             cout << "\n\t\tDelete record!!!" << endl;
-            cout << "are you sure?";
+            cout << "\n\t\tAre you sure? (Y=1/N=0):";
+        
+            int sure;
+            cin>>sure;
+        
+            if(sure == 1)
+            {
+                cout<<"All record is deleted"<<endl;
+
+                totalAmount = 0;
+                totalVahicles =0;
+                carCount=0;
+                bikeCount=0;
+                busCount=0;
+                rishkawCount=0;
+                bicycleCount=0;
+            
+            }
+            else if(sure ==0)
+            {
+                cout<<"Action reverted";
+            }
+            else
+            {
+                cout<<"Please only select 1 or 0"<<endl;
+            }
         }
         else if (choice == 14)
         {
