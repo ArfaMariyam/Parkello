@@ -1,4 +1,4 @@
-# Car Parking Project
+# Parkello - Car Parking Management System
 This is a terminal app designed to help the parking operator by managing the arrival and departure of vehicles, maintaining the log history, and calculating fees.
 
 ### How I made it:
