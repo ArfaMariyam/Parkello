@@ -3,7 +3,7 @@ This is a terminal based app Car Parking Management System designed to help the 
 
 ### How I made it:
 I am combining all the foundational concepts I've been teaching myself:
-* The use of **cout** to print the menu. Tap [--> here <--](demo/ScreenShorts/cout(menu).png) to see code screenshot.
+* The use of **cout** to print the menu. Tap [--> here <--](demo/ScreenShorts/menu(cout).png) to see code screenshot.
 * **cin** to get user input. Tap [--> here <--](demo/ScreenShorts/cin(user_Input).png) to see code screenshot.
 * **while(true) loop** to display the menu again and again. Tap [--> here <--](demo/ScreenShorts/loop.png) to see code screenshot.
 * **if-else statements** to respond to user input. Tap [--> here <--](demo/ScreenShorts/loop.png) to see code screenshot.
