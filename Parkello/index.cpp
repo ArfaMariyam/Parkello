@@ -184,8 +184,8 @@ int main()
             cout << "Select what do you want to edit:";
             cout << "\n\n\t\t\t  1. Cars \t\t\t  2. Bikes ";
             cout << "\n\n\t\t\t  3. Buses \t\t\t  4. Rishkaws ";
-            cout << "\n\n\t\t\t  5. Bicycles \t\t\t  6. EXIT ";
-            cout<<"";
+            cout << "\n\n\t\t\t  5. Bicycles \t\t\t  6. Total Cash ";
+            cout<<"\n\n\t\t\t 7. Total Vahicles \t\t 8. EXIT";
             cout<<"\n\n\t\t\t Enter option:"<<endl;
             cin >> edit;
             if (edit == 1)
@@ -220,9 +220,24 @@ int main()
             {
                 cout << "\n\n\t\t\tEditing Bicycles" << endl;
                 cout << "Current Parked Bicycles are: " << bicycleCount << endl;
+                cout<<"Enter new amount:";
                 cin >> bicycleCount;
             }
-            else if (edit == 6)
+            else if(edit==6)
+            {
+                cout<<"\n\n\t\t\tEditing Total Cash Balance"<<endl;
+                cout<<"Current ladger Cash is: "<<totalAmount<<endl;
+                cout<<"Enter new ladger Cash amount:";
+                cin>>totalAmount;
+            }
+            else if(edit==7)
+            {
+                cout<<"\n\n\t\t\tEditing Total Parked Vahicles count"<<endl;
+                cout<<"\n\n\t\t\tCurrent Total Vahicles count is: "<<totalVahicles<<endl;
+                cout<<"Enter new total vahicle amount: ";
+                cin>>totalVahicles;
+            }
+            else if (edit == 8)
             {
                 cout << "\n\n\t\t\tExiting Editing" << endl;
             }
@@ -231,6 +246,8 @@ int main()
                 cout << "\n\n\t\t\tPlease only select from given options" << endl;
             }
         }
+
+        //=========Delete record=============
         else if (choice == 13)
         {
             cout << "\n\t\tDelete record!!!" << endl;
@@ -241,7 +258,7 @@ int main()
 
             if (sure == 1)
             {
-                cout << "All record is deleted" << endl;
+                cout << "\n\t\tAll record is deleted" << endl;
 
                 totalAmount = 0;
                 totalVahicles = 0;
@@ -253,11 +270,11 @@ int main()
             }
             else if (sure == 0)
             {
-                cout << "Action reverted";
+                cout << "\n\t\tAction reverted";
             }
             else
             {
-                cout << "Please only select 1 or 0" << endl;
+                cout << "\n\t\tPlease only select 1 or 0" << endl;
             }
         }
         else if (choice == 14)
