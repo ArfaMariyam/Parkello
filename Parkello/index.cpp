@@ -51,7 +51,7 @@ int main()
         {
             cout << "\n\t\tBike arrived" << endl;
             bikeCount = bikeCount + 1;
-            totalVahicles = totalAmount + 1;
+            totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 20;
         }
         else if (choice == 2)
@@ -133,6 +133,7 @@ int main()
             {
                 cout << "\n\t\tRishkaw departure" << endl;
                 rishkawCount = rishkawCount - 1;
+                totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 50;
             }
             else
@@ -146,6 +147,7 @@ int main()
             {
                 cout << "\n\t\tBicyce departure" << endl;
                 bicycleCount = bicycleCount - 1;
+                totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 10;
             }
             else
@@ -157,108 +159,103 @@ int main()
         //========Show Record============
         else if (choice == 11)
         {
-            cout << "\n\t\t===========================" << endl;
-            cout << "\n\t\t===========================" << endl;
-            cout << "\n\t\tShowing record!!!" << endl;
-            cout << "\n\t\t===========================" << endl;
-            cout << "\n\t\t===========================" << endl;
-            cout << "\n\t\tRecord:" << endl;
-            cout << "\n\t\t=====================================================" << endl;
-            cout << "\n\t\tThe current number of Cars parked is:" << carCount << endl;
-            cout << "\n\t\tThe current number of Bikes parked is:" << bikeCount << endl;
-            cout << "\n\t\tThe current number of Buses parked is:" << busCount << endl;
-            cout << "\n\t\tThe current number of Bicycles parked is:" << bicycleCount << endl;
-            cout << "\n\t\t-------------------------------------------------------" << endl;
-            cout << "\n\t\tTotal current Vahicles parked is:" << totalVahicles << endl;
-            cout << "\n\t\tTotal current cash ledger is:" << totalAmount << endl;
-            cout << "\n\t\t=====================================================" << endl;
+            cout << "\n\t\t\t=====================================================";
+            cout << "\n\t\t\t                    LIVE RECORD                      ";
+            cout << "\n\t\t\t=====================================================";
+            cout << "\n\t\t\t  Current Parked Cars      :" << carCount;
+            cout << "\n\t\t\t  Current Parked Bikes     :" << bikeCount;
+            cout << "\n\t\t\t  Current Parked Buses     :" << busCount;
+            cout << "\n\t\t\t  Current Parked Rishkaws  :" << rishkawCount;
+            cout << "\n\t\t\t  Current Parked Bicycles  :" << bicycleCount;
+            cout << "\n\t\t\t-------------------------------------------------------" << endl;
+            cout << "\n\t\t\t  Total Current Vahicles   :" << totalVahicles;
+            cout << "\n\t\t\t  Total Current Cash       :" << totalAmount;
+            cout << "\n\t\t\t=====================================================" << endl;
         }
 
         //===========Editing=============
         else if (choice == 12)
         {
-            cout << "\n\t\tEdit record!!!" << endl;
-
             int edit = 0;
 
-            cout << "Select what do you want to edit:";
-            cout << "\n\n\t\t\t  1. Cars \t\t\t  2. Bikes ";
-            cout << "\n\n\t\t\t  3. Buses \t\t\t  4. Rishkaws ";
-            cout << "\n\n\t\t\t  5. Bicycles \t\t\t  6. Total Cash ";
-            cout<<"\n\n\t\t\t 7. Total Vahicles \t\t 8. EXIT";
-            cout<<"\n\n\t\t\t Enter option:"<<endl;
+            cout << "\n\t\t\t=====================================================";
+            cout << "\n\t\t\t                    ADMIN EDITOR                     ";
+            cout << "\n\t\t\t=====================================================";
+            cout << "\n\t\t\t  1. Cars \t\t\t  2. Bikes ";
+            cout << "\n\t\t\t  3. Buses \t\t\t  4. Rishkaws ";
+            cout << "\n\t\t\t  5. Bicycles \t\t\t  6. Total Cash ";
+            cout << "\n\t\t\t  7. Total Vahicles \t\t 8. CANCEL & EXIT";
+            cout << "\n\t\t\t=====================================================";
+            cout << "\n\t\t\t  Select what do you want to edit:";
             cin >> edit;
+
             if (edit == 1)
             {
-                cout << "\n\n\t\t\tEditing Cars" << endl;
-                cout << "Current Parked Cars are: " << carCount << endl;
-                cout << "Enter new amount:" << endl;
+                cout << "\n\t\t\tCurrent Parked Cars:" << carCount;
+                cout << "\n\t\t\tEnter new value:";
                 cin >> carCount;
             }
             else if (edit == 2)
             {
-                cout << "\n\n\t\t\tEditing Bikes" << endl;
-                cout << "Current Parked Bikes are: " << bikeCount << endl;
-                cout << "Enter new amount:";
+                cout << "\n\t\t\tCurrent Parked Bikes: " << bikeCount;
+                cout << "\n\t\t\tEnter new value:";
                 cin >> bikeCount;
             }
             else if (edit == 3)
             {
-                cout << "\n\n\t\t\tEditing Buses" << endl;
-                cout << "Current Parked Buses are: " << busCount << endl;
-                cout << "Enter new amount:";
+                cout << "\n\t\t\tCurrent Parked Buses: " << busCount;
+                cout << "\n\t\t\tEnter new value:";
                 cin >> busCount;
             }
             else if (edit == 4)
             {
-                cout << "\n\n\t\t\tEditing Rishkaws" << endl;
-                cout << "Current Parked Rishkaws are: " << rishkawCount << endl;
-                cout << "Enter new amount:";
+                cout << "\n\t\t\tCurrent Parked Rishkaws: " << rishkawCount;
+                cout << "\n\t\t\tEnter new value:";
                 cin >> rishkawCount;
             }
             else if (edit == 5)
             {
-                cout << "\n\n\t\t\tEditing Bicycles" << endl;
-                cout << "Current Parked Bicycles are: " << bicycleCount << endl;
-                cout<<"Enter new amount:";
+                cout << "\n\t\t\tCurrent Parked Bicycles: " << bicycleCount;
+                cout << "\n\t\t\tEnter new value:";
                 cin >> bicycleCount;
             }
-            else if(edit==6)
+            else if (edit == 6)
             {
-                cout<<"\n\n\t\t\tEditing Total Cash Balance"<<endl;
-                cout<<"Current ladger Cash is: "<<totalAmount<<endl;
-                cout<<"Enter new ladger Cash amount:";
-                cin>>totalAmount;
+                cout << "\n\t\t\tCurrent ladger Cash: " << totalAmount;
+                cout << "\n\t\t\tEnter new ladger Cash amount:";
+                cin >> totalAmount;
             }
-            else if(edit==7)
+            else if (edit == 7)
             {
-                cout<<"\n\n\t\t\tEditing Total Parked Vahicles count"<<endl;
-                cout<<"\n\n\t\t\tCurrent Total Vahicles count is: "<<totalVahicles<<endl;
-                cout<<"Enter new total vahicle amount: ";
-                cin>>totalVahicles;
+                cout << "\n\t\t\tCurrent Total Vahicles count: " << totalVahicles;
+                cout << "\n\t\t\tEnter new total vahicle amount: ";
+                cin >> totalVahicles;
             }
             else if (edit == 8)
             {
-                cout << "\n\n\t\t\tExiting Editing" << endl;
+                cout << "\n\t\t\tCanceled - Exiting Editing" << endl;
             }
             else
             {
-                cout << "\n\n\t\t\tPlease only select from given options" << endl;
+                cout << "\n\t\t\tPlease only select from given options" << endl;
             }
         }
 
         //=========Delete record=============
         else if (choice == 13)
         {
-            cout << "\n\t\tDelete record!!!" << endl;
-            cout << "\n\t\tAre you sure? (Y=1/N=0):";
+            cout << "\n\t\t\t=====================================================";
+            cout << "\n\t\t\tWARNING: Are you sure you want to delete everything?";
+            cout << "\n\t\t\t           Press 1 for Yes (DELETE)";
+            cout << "\n\t\t\t           Press 0 for No (Cancel)";
+            cout << "\n\t\t\t=====================================================";
 
             int sure;
             cin >> sure;
 
             if (sure == 1)
             {
-                cout << "\n\t\tAll record is deleted" << endl;
+                cout << "\n\t\t\tAll records have been successfully deleted!";
 
                 totalAmount = 0;
                 totalVahicles = 0;
@@ -270,16 +267,19 @@ int main()
             }
             else if (sure == 0)
             {
-                cout << "\n\t\tAction reverted";
+                cout << "\n\t\t\tAction reverted" << endl;
             }
             else
             {
-                cout << "\n\t\tPlease only select 1 or 0" << endl;
+                cout << "\n\t\t\tPlease only select 1 or 0 - Deletion Canceled" << endl;
             }
         }
         else if (choice == 14)
         {
-            cout << "\n\t\tEXIT PROGRAM!!!" << endl;
+            cout << "\n\t\t\t=====================================================";
+            cout << "\n\t\t\tSHUTDOWN - EXIT PROGRAM - GOOD BYE!";
+            cout << "\n\t\t\t=====================================================\n"
+                 << endl;
             return 0;
         }
         else
