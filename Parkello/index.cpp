@@ -1,9 +1,9 @@
 #include <iostream>
 #include <fstream>
+#include <conio.h>
 // #include<string.h>
 // #include<process.h>
 // #include<stdio.h>
-// #include<conio.h>
 using namespace std;
 
 void menu() // main menu
@@ -27,6 +27,63 @@ void menu() // main menu
 
 int main()
 {
+    //========== LOGIN CODE ==========
+    string userName;
+    string userPassword;
+    int loginAttempt = 0;
+    char ch;
+
+    cout << "\n\t\t\t=====================================================";
+    cout << "\n\t\t\t                SECURITY VERIFICATION                ";
+    cout << "\n\t\t\t       YOU HAVE MAXIMUM OF 5 LOGIN ATTEMPTS          ";
+    cout << "\n\t\t\t=====================================================";
+
+    while (loginAttempt < 5)
+    {
+        userName = "";
+        userPassword = "";
+        cout << "\n\t\t\tEnter Username: ";
+        cin >> userName;
+        if (userName == "admin")
+        {
+            cout << "\n\t\t\tUsername Accepted.";
+            cout << "\n\t\t\tPlease enter your PIN: ";
+            for (int i = 0; i < 4; i++)
+            {
+                ch = getch();
+                userPassword.push_back(ch);
+                cout << 'X';
+            }
+            cout << endl;
+        }
+        else
+        {
+            cout << "\n\t\t\tERROR - Incorrect Username";
+            cout << "\n\t\t\tPlease enter your PIN: ";
+            for (int i = 0; i < 4; i++)
+            {
+                ch = getch();
+            }
+            cout << "\n\t\t\tXXXX" << endl;
+        }
+        if (userName == "admin" && userPassword == "1234")
+        {
+            cout << "\n\t\t\t=====================================================";
+            cout << "\n\t\t\t       ACCESS GRANTED - CONGRATULATIONS!             ";
+            cout << "\n\t\t\t====================================================="<<endl;
+            break;
+        }
+        else
+        {
+            loginAttempt=loginAttempt+1;
+            cout<<"\n\t\t\t=====================================================";
+            cout<<"\n\t\t\t           Invalid credential entered.";
+            cout<<"\n\t\t\t     ATTEMPT "<<loginAttempt<<" of 5 Completed";
+            cout<<"\n\t\t\t====================================================="<<endl;
+        }
+    }
+
+    //==========MAIN CODE==========
     int choice; // main menu choice
 
     int totalAmount = 0;   // total cash
@@ -43,41 +100,41 @@ int main()
     {
         menu();
 
-        cout << "\n\n\t\t\t Enter your choice from menu: ";
+        cout << "\n\n\t\t\tEnter your choice from menu: ";
         cin >> choice;
 
-        // ==========Arrivals==========
+        //==========Arrivals==========
         if (choice == 1)
         {
-            cout << "\n\t\tBike arrived" << endl;
+            cout << "\n\t\t\tBike arrived" << endl;
             bikeCount = bikeCount + 1;
             totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 20;
         }
         else if (choice == 2)
         {
-            cout << "\n\t\tCar arrived" << endl;
+            cout << "\n\t\t\tCar arrived" << endl;
             carCount = carCount + 1;
             totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 50;
         }
         else if (choice == 3)
         {
-            cout << "\n\t\tBus arrived" << endl;
+            cout << "\n\t\t\tBus arrived" << endl;
             busCount = busCount + 1;
             totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 100;
         }
         else if (choice == 4)
         {
-            cout << "\n\t\tRishkaw arrived" << endl;
+            cout << "\n\t\t\tRishkaw arrived" << endl;
             rishkawCount = rishkawCount + 1;
             totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 50;
         }
         else if (choice == 5)
         {
-            cout << "\n\t\tBicycle arrived" << endl;
+            cout << "\n\t\t\tBicycle arrived" << endl;
             bicycleCount = bicycleCount + 1;
             totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 10;
@@ -89,78 +146,79 @@ int main()
         {
             if (bikeCount > 0)
             {
-                cout << "\n\t\tBike departure" << endl;
+                cout << "\n\t\t\tBike departure" << endl;
                 bikeCount = bikeCount - 1;
                 totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 20;
             }
             else
             {
-                cout << "Error: No Bikes currently parked. " << endl;
+                cout << "\t\t\tError: No Bikes currently parked. " << endl;
             }
         }
         else if (choice == 7)
         {
             if (carCount > 0)
             {
-                cout << "\n\t\tCar departure" << endl;
+                cout << "\n\t\t\tCar departure" << endl;
                 carCount = carCount - 1;
                 totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 50;
             }
             else
             {
-                cout << "Error: No Cars currently parked. " << endl;
+                cout << "\n\t\t\tError: No Cars currently parked. " << endl;
             }
         }
         else if (choice == 8)
         {
             if (busCount > 0)
             {
-                cout << "\n\t\tBus departure" << endl;
+                cout << "\n\t\t\tBus departure" << endl;
                 busCount = busCount - 1;
                 totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 100;
             }
             else
             {
-                cout << "\n\t\tError: No Buses currently parked. " << endl;
+                cout << "\n\t\t\tError: No Buses currently parked. " << endl;
             }
         }
         else if (choice == 9)
         {
             if (rishkawCount > 0)
             {
-                cout << "\n\t\tRishkaw departure" << endl;
+                cout << "\n\t\t\tRishkaw departure" << endl;
                 rishkawCount = rishkawCount - 1;
                 totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 50;
             }
             else
             {
-                cout << "Error: No rishkaws curretly parked. " << endl;
+                cout << "\n\t\t\tError: No rishkaws curretly parked. " << endl;
             }
         }
         else if (choice == 10)
         {
             if (bicycleCount > 0)
             {
-                cout << "\n\t\tBicyce departure" << endl;
+                cout << "\n\t\t\tBicyce departure. " << endl;
                 bicycleCount = bicycleCount - 1;
                 totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 10;
             }
             else
             {
-                cout << "Error: No Bicycles currently parked. " << endl;
+                cout << "\n\t\t\tError: No Bicycles currently parked. " << endl;
             }
         }
 
         //========Show Record============
         else if (choice == 11)
         {
+            cout<<"\n\t\t\t";
             cout << "\n\t\t\t=====================================================";
-            cout << "\n\t\t\t                    LIVE RECORD                      ";
+            cout << "\n\t\t\t                 CURRENT LIVE RECORD                 ";
             cout << "\n\t\t\t=====================================================";
             cout << "\n\t\t\t  Current Parked Cars      :" << carCount;
             cout << "\n\t\t\t  Current Parked Bikes     :" << bikeCount;
@@ -171,6 +229,7 @@ int main()
             cout << "\n\t\t\t  Total Current Vahicles   :" << totalVahicles;
             cout << "\n\t\t\t  Total Current Cash       :" << totalAmount;
             cout << "\n\t\t\t=====================================================" << endl;
+            cout<<"\n\t\t\t";
         }
 
         //===========Editing=============
@@ -184,9 +243,9 @@ int main()
             cout << "\n\t\t\t  1. Cars \t\t\t  2. Bikes ";
             cout << "\n\t\t\t  3. Buses \t\t\t  4. Rishkaws ";
             cout << "\n\t\t\t  5. Bicycles \t\t\t  6. Total Cash ";
-            cout << "\n\t\t\t  7. Total Vahicles \t\t 8. CANCEL & EXIT";
+            cout << "\n\t\t\t  7. Total Vahicles \t\t 8. CANCEL & EXIT ";
             cout << "\n\t\t\t=====================================================";
-            cout << "\n\t\t\t  Select what do you want to edit:";
+            cout << "\n\t\t\tSelect what do you want to edit:";
             cin >> edit;
 
             if (edit == 1)
@@ -233,11 +292,11 @@ int main()
             }
             else if (edit == 8)
             {
-                cout << "\n\t\t\tCanceled - Exiting Editing" << endl;
+                cout << "\n\t\t\tCanceled - Exiting Editing. " << endl;
             }
             else
             {
-                cout << "\n\t\t\tPlease only select from given options" << endl;
+                cout << "\n\t\t\tPlease only select from given options. " << endl;
             }
         }
 
@@ -255,7 +314,9 @@ int main()
 
             if (sure == 1)
             {
+                cout << "\n\t\t\t-------------------------------------------";
                 cout << "\n\t\t\tAll records have been successfully deleted!";
+                cout << "\n\t\t\t-------------------------------------------";
 
                 totalAmount = 0;
                 totalVahicles = 0;
@@ -267,24 +328,26 @@ int main()
             }
             else if (sure == 0)
             {
-                cout << "\n\t\t\tAction reverted" << endl;
+                cout << "\n\t\t\tAction reverted. " << endl;
             }
             else
             {
-                cout << "\n\t\t\tPlease only select 1 or 0 - Deletion Canceled" << endl;
+                cout << "\n\t\t\tPlease only select 1 or 0 - Deletion Canceled. " << endl;
             }
         }
         else if (choice == 14)
         {
             cout << "\n\t\t\t=====================================================";
-            cout << "\n\t\t\tSHUTDOWN - EXIT PROGRAM - GOOD BYE!";
+            cout << "\n\t\t\t           PROGRAM SHUTDOWN - GOOD BYE!";
             cout << "\n\t\t\t=====================================================\n"
                  << endl;
             return 0;
         }
         else
         {
-            cout << "\n\t\tInvalid choice - Chose from given options only!!!" << endl;
+            cout << "\n\t\t\t=========================================================" <<endl;
+            cout << "\n\t\t\tInvalid choice - Please chose from 1 to 14 options only. " << endl;
+            cout << "\n\t\t\t========================================================="<<endl;
         }
     }
     return 0;
