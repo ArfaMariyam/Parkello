@@ -1,10 +1,35 @@
 #include <iostream>
 #include <fstream>
 #include <conio.h>
-// #include<string.h>
-// #include<process.h>
-// #include<stdio.h>
+
 using namespace std;
+
+//========== File managment ==========
+void saveData(int amount, int vahicles, int bike, int car, int bus, int rishkaw, int bicycle)
+{
+    ofstream outFile("parking_records.txt");
+    if (outFile.is_open())
+    {
+        outFile << amount << "\n"
+                << vahicles << "\n"
+                << bike << "\n"
+                << car << "\n"
+                << bus << "\n"
+                << rishkaw << "\n"
+                << bicycle;
+        outFile.close();
+    }
+}
+
+void loadData(int &amount, int &vehicles, int &bike, int &car, int &bus, int &rishkaw, int &bicycl)
+{
+    ifstream inFile("parking_records.txt");
+    if (inFile.is_open())
+    {
+        inFile >> amount >> vehicles >> bike >> car >> bus >> rishkaw >> bicycl;
+        inFile.close();
+    }
+}
 
 void menu() // main menu
 {
@@ -70,16 +95,16 @@ int main()
         {
             cout << "\n\t\t\t=====================================================";
             cout << "\n\t\t\t       ACCESS GRANTED - CONGRATULATIONS!             ";
-            cout << "\n\t\t\t====================================================="<<endl;
+            cout << "\n\t\t\t=====================================================" << endl;
             break;
         }
         else
         {
-            loginAttempt=loginAttempt+1;
-            cout<<"\n\t\t\t=====================================================";
-            cout<<"\n\t\t\t           Invalid credential entered.";
-            cout<<"\n\t\t\t     ATTEMPT "<<loginAttempt<<" of 5 Completed";
-            cout<<"\n\t\t\t====================================================="<<endl;
+            loginAttempt = loginAttempt + 1;
+            cout << "\n\t\t\t=====================================================";
+            cout << "\n\t\t\t           Invalid credential entered.";
+            cout << "\n\t\t\t     ATTEMPT " << loginAttempt << " of 5 Completed";
+            cout << "\n\t\t\t=====================================================" << endl;
         }
     }
 
@@ -96,6 +121,9 @@ int main()
     int rishkawCount = 0; // rishkaw fee 50
     int bicycleCount = 0; // bicycle fee 10
 
+    // auto load records from local file, if exists
+    loadData(totalAmount, totalVahicles, bikeCount, carCount, busCount, rishkawCount, bicycleCount);
+
     while (true) // main loop
     {
         menu();
@@ -110,6 +138,7 @@ int main()
             bikeCount = bikeCount + 1;
             totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 20;
+            saveData(totalAmount, totalVahicles, bikeCount, carCount, busCount, rishkawCount, bicycleCount);
         }
         else if (choice == 2)
         {
@@ -117,6 +146,7 @@ int main()
             carCount = carCount + 1;
             totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 50;
+            saveData(totalAmount, totalVahicles, bikeCount, carCount, busCount, rishkawCount, bicycleCount);
         }
         else if (choice == 3)
         {
@@ -124,6 +154,7 @@ int main()
             busCount = busCount + 1;
             totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 100;
+            saveData(totalAmount, totalVahicles, bikeCount, carCount, busCount, rishkawCount, bicycleCount);
         }
         else if (choice == 4)
         {
@@ -131,6 +162,7 @@ int main()
             rishkawCount = rishkawCount + 1;
             totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 50;
+            saveData(totalAmount,totalVahicles, bikeCount, carCount, busCount, rishkawCount, bicycleCount);
         }
         else if (choice == 5)
         {
@@ -138,6 +170,7 @@ int main()
             bicycleCount = bicycleCount + 1;
             totalVahicles = totalVahicles + 1;
             totalAmount = totalAmount + 10;
+            saveData(totalAmount, totalVahicles, bikeCount, carCount , busCount,rishkawCount, bicycleCount);
         }
 
         //==========Departures==========
@@ -150,6 +183,7 @@ int main()
                 bikeCount = bikeCount - 1;
                 totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 20;
+                saveData(totalAmount, totalVahicles, bikeCount, carCount, busCount, rishkawCount, bicycleCount);
             }
             else
             {
@@ -164,6 +198,7 @@ int main()
                 carCount = carCount - 1;
                 totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 50;
+                saveData(totalAmount, totalVahicles, bikeCount, carCount, busCount, rishkawCount, bicycleCount);
             }
             else
             {
@@ -178,6 +213,7 @@ int main()
                 busCount = busCount - 1;
                 totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 100;
+                saveData(totalAmount, totalVahicles, bikeCount, carCount, busCount, rishkawCount, bicycleCount);
             }
             else
             {
@@ -192,6 +228,7 @@ int main()
                 rishkawCount = rishkawCount - 1;
                 totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 50;
+                saveData(totalAmount, totalVahicles, bikeCount, carCount,busCount, rishkawCount, bicycleCount);
             }
             else
             {
@@ -206,6 +243,7 @@ int main()
                 bicycleCount = bicycleCount - 1;
                 totalVahicles = totalVahicles - 1;
                 totalAmount = totalAmount - 10;
+                saveData();
             }
             else
             {
@@ -216,7 +254,7 @@ int main()
         //========Show Record============
         else if (choice == 11)
         {
-            cout<<"\n\t\t\t";
+            cout << "\n\t\t\t";
             cout << "\n\t\t\t=====================================================";
             cout << "\n\t\t\t                 CURRENT LIVE RECORD                 ";
             cout << "\n\t\t\t=====================================================";
@@ -229,7 +267,7 @@ int main()
             cout << "\n\t\t\t  Total Current Vahicles   :" << totalVahicles;
             cout << "\n\t\t\t  Total Current Cash       :" << totalAmount;
             cout << "\n\t\t\t=====================================================" << endl;
-            cout<<"\n\t\t\t";
+            cout << "\n\t\t\t";
         }
 
         //===========Editing=============
@@ -345,9 +383,9 @@ int main()
         }
         else
         {
-            cout << "\n\t\t\t=========================================================" <<endl;
+            cout << "\n\t\t\t=========================================================" << endl;
             cout << "\n\t\t\tInvalid choice - Please chose from 1 to 14 options only. " << endl;
-            cout << "\n\t\t\t========================================================="<<endl;
+            cout << "\n\t\t\t=========================================================" << endl;
         }
     }
     return 0;
